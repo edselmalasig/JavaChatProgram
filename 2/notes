@@ -1,0 +1,2 @@
+streamIn = new DataInputStream(new 
+                        BufferedInputStream(System.in));
