@@ -22,7 +22,7 @@ public class JCUI extends javax.swing.JFrame {
     private Vector<String> vsMsg;
     private String message;
     private ChatClient cc;
-    
+
     public JCUI() {
         vsMsg = new Vector<String>();
         initComponents();
@@ -176,7 +176,7 @@ public class JCUI extends javax.swing.JFrame {
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().setLayout(new AbsoluteLayout());
 
         ta_server.setEditable(false);
         ta_server.setColumns(20);
@@ -185,7 +185,7 @@ public class JCUI extends javax.swing.JFrame {
 
         tab_server.addTab("Server Name", sp_server);
 
-        getContentPane().add(tab_server, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 0, 1140, 453));
+        getContentPane().add(tab_server, new AbsoluteConstraints(150, 0, 1140, 453));
 
         lbl_message.setText("Message:");
 
@@ -218,7 +218,7 @@ public class JCUI extends javax.swing.JFrame {
                 .addComponent(lbl_message))
         );
 
-        getContentPane().add(pnl_message, new org.netbeans.lib.awtextra.AbsoluteConstraints(1, 459, 1301, -1));
+        getContentPane().add(pnl_message, new AbsoluteConstraints(1, 459, 1301, -1));
 
         pnl_client.setEnabled(false);
 
@@ -233,15 +233,15 @@ public class JCUI extends javax.swing.JFrame {
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        getContentPane().add(pnl_client, new org.netbeans.lib.awtextra.AbsoluteConstraints(153, 0, -1, -1));
+        getContentPane().add(pnl_client, new AbsoluteConstraints(153, 0, -1, -1));
 
         lbl_client.setText("Users");
         lbl_client.setEnabled(false);
-        getContentPane().add(lbl_client, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 0, 50, 35));
+        getContentPane().add(lbl_client, new AbsoluteConstraints(50, 0, 50, 35));
 
         jScrollPane2.setViewportView(clients_jList);
 
-        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 140, 410));
+        getContentPane().add(jScrollPane2, new AbsoluteConstraints(10, 30, 140, 410));
 
         menu_main.setText("Server");
 
@@ -295,14 +295,14 @@ public class JCUI extends javax.swing.JFrame {
         // TODO add your handling code here:
             //this.ta_server.append(message + "\n");
             this.repaint();
-            
+
     }//GEN-LAST:event_tf_msgActionPerformed
 
     private void mi_docsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mi_docsActionPerformed
         // TODO add your handling code here:
         f_Doc.setSize(530,500);
         ta_Doc.setSize(350, 350);
-        
+
         f_Doc.setTitle("Documentation.");
         f_Doc.setDefaultCloseOperation(1);
         f_Doc.setVisible(true);
@@ -312,7 +312,7 @@ public class JCUI extends javax.swing.JFrame {
                 + "Server Menu -> Name -> User nickname to use.\n"
                 + "Connect -> Initiate a connection.\n"
                 + "Cancel -> Cancel a setup.\n");
-        
+
         ta_Doc.append("\n");
         ta_Doc.append("Help Menu -> Docs -> Opens this help overview\n"
                 + "Help Menu -> About -> Credits the author and contributor of this program.\n");
@@ -324,22 +324,22 @@ public class JCUI extends javax.swing.JFrame {
             message = tf_msg.getText();
              if( evt.getKeyCode() == java.awt.event.KeyEvent.VK_ENTER )
              {
-                 
+
                  if(vsMsg.size() < 50)
                      vsMsg.addElement(message);
-                 
+
                  cc.msg = message;
-                 
+
                  try{
                     cc.streamOut.writeUTF(message);
                     cc.streamOut.flush();
                  }catch (IOException ioe){
-                     
+
                  }
              tf_msg.setText(null);
              }
-             
-                     
+
+
     }//GEN-LAST:event_tf_msgKeyPressed
 
     private void tfd_serverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfd_serverActionPerformed
@@ -348,19 +348,19 @@ public class JCUI extends javax.swing.JFrame {
 
     private void mi_connectMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mi_connectMouseClicked
         // TODO add your handling code here:
-       
+
     }//GEN-LAST:event_mi_connectMouseClicked
 
     private void mi_connectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mi_connectActionPerformed
         // TODO add your handling code here:
         f_connect.setSize(400,400);
-        
+
         f_connect.setTitle("Set Username and connect to server.");
         f_connect.setDefaultCloseOperation(1);
         f_connect.setVisible(true);
         f_connect.show(true);
         f_connect.repaint();
- 
+
     }//GEN-LAST:event_mi_connectActionPerformed
 
     private void btn_connectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_connectActionPerformed
@@ -373,42 +373,42 @@ public class JCUI extends javax.swing.JFrame {
 
     private void mi_aboutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mi_aboutActionPerformed
         // TODO add your handling code here:
-        f_about.setSize(400,400);     
-        f_about.setTitle("About the credits of this program.");        
-        f_about.setDefaultCloseOperation(1);        
-        f_about.setVisible(true);        
-        f_about.show(true);        
-        f_about.setTitle("Java Chat Program");        
-        ta_about.setText("Java Chat Program\n"        
-                + "Conceptualized, researched and developed by Edsel Malasig\n"        
-                + "Resources where taken from tenouk.com\n"        
-                + "as well as Carannos book\n"        
-                + "and O'Reileys Network Programming for Java\n"        
-                + "This software is licensed under GPL2\n"        
-                + "It is free and opensource.");        
-        f_about.repaint(); 
+        f_about.setSize(400,400);
+        f_about.setTitle("About the credits of this program.");
+        f_about.setDefaultCloseOperation(1);
+        f_about.setVisible(true);
+        f_about.show(true);
+        f_about.setTitle("Java Chat Program");
+        ta_about.setText("Java Chat Program\n"
+                + "Conceptualized, researched and developed by Edsel Malasig\n"
+                + "Resources where taken from tenouk.com\n"
+                + "as well as Carannos book\n"
+                + "and O'Reileys Network Programming for Java\n"
+                + "This software is licensed under GPL2\n"
+                + "It is free and opensource.");
+        f_about.repaint();
     }//GEN-LAST:event_mi_aboutActionPerformed
 
     private void f_aboutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_f_aboutMouseClicked
         // TODO add your handling code here:
-        f_about.setSize(400,400);        
+        f_about.setSize(400,400);
 
-        f_about.setTitle("About the credits of this program.");        
-        f_about.setDefaultCloseOperation(1);        
-        f_about.setVisible(true);        
-        f_about.show(true);        
-        f_about.setTitle("Java Chat Program");        
-        ta_about.setText("Java Chat Program\n"        
-                + "Conceptualized, researched and developed by Edsel Malasig\n"        
-                + "Resources where taken from tenouk.com\n"        
-                + "as well as Carannos book\n"        
-                + "and O'Reileys Network Programming for Java\n"        
-                + "This software is licensed under GPL2\n"        
-                + "It is free and opensource.");        
-        f_about.repaint();  
+        f_about.setTitle("About the credits of this program.");
+        f_about.setDefaultCloseOperation(1);
+        f_about.setVisible(true);
+        f_about.show(true);
+        f_about.setTitle("Java Chat Program");
+        ta_about.setText("Java Chat Program\n"
+                + "Conceptualized, researched and developed by Edsel Malasig\n"
+                + "Resources where taken from tenouk.com\n"
+                + "as well as Carannos book\n"
+                + "and O'Reileys Network Programming for Java\n"
+                + "This software is licensed under GPL2\n"
+                + "It is free and opensource.");
+        f_about.repaint();
     }//GEN-LAST:event_f_aboutMouseClicked
-    
-    
+
+
     /**
      * @param args the command line arguments
      */
@@ -416,8 +416,8 @@ public class JCUI extends javax.swing.JFrame {
     public static void main(String args[]) {
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         // If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-        // For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-        
+        // For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
+
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -436,7 +436,7 @@ public class JCUI extends javax.swing.JFrame {
         }
         //</editor-fold>
 
-        /// Create and display the form 
+        /// Create and display the form
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new mainJFrame().setVisible(true);
@@ -477,16 +477,16 @@ public class JCUI extends javax.swing.JFrame {
     private javax.swing.JTextField tfd_port;
     private javax.swing.JTextField tfd_server;
     // End of variables declaration//GEN-END:variables
-    
+
     public javax.swing.JTextArea get_ta_server(){
         return ta_server;
     }
-    
-    
+
+
     public javax.swing.JTextField get_tf_msg(){
         return tf_msg;
     }
-    
+
     public javax.swing.JTabbedPane get_tab_server(){
         return tab_server;
     }
