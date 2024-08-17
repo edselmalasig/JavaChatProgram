@@ -6,8 +6,8 @@ It includes the client and server program and source file and project files to b
 Compiling JavaChatProgram needs netbeans 10.0 or above so that you do not have to finagle with a build system and configure the directories and files needed to accomplish the task. A project file is already included that can be opened with netbeans and a simple build and run will generate a jar file that can be executed on the terminal or run through netbeans.
 
 Compile the Java Chat Server Program
-The project files at "ui/*/nbproject" can be opened with netbeans 10 and be compiled.
-or use the command line
+The project files at "ui/*/nbproject" can be opened with netbeans 10 and be compiled
+or use the command line to run and compile.
 <pre>
   cd ui/JavaChatServerProgramUI/src
   javac JavaChatServerProgramUI/*.java
@@ -27,5 +27,20 @@ Note: There is a client and server code. The server program needs to be run thro
 
 Once the server program us up and running. Run a client program to connect to the server program by using the specified parameters used above and choosing any desired user name.
 Once connected you can test the program's feature.
+
+There is a commandline interface as well
+<pre>
+  cd src/
+  javac *.java
+</pre>
+then run the Chat Server or Chat Client on a different process.
+<pre>
+  java ChatServer 404
+</pre>
+<pre>
+  javac ChatClient 127.0.0.1 404 username
+</pre>
+and start chatting with the server.
+
 
 Have fun hacking.
