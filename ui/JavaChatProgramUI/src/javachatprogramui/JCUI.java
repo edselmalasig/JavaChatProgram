@@ -259,6 +259,16 @@ public class JCUI extends javax.swing.JFrame {
         menu_main.add(mi_connect);
 
         mi_disconnect.setText("Disconnect");
+        mi_disconnect.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                mi_connectMouseClicked(evt);
+            }
+        });
+        mi_disconnect.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mi_disconnectActionPerformed(evt);
+            }
+        });
         menu_main.add(mi_disconnect);
 
         mi_exit.setText("Exit");
@@ -362,6 +372,10 @@ public class JCUI extends javax.swing.JFrame {
         f_connect.repaint();
 
     }//GEN-LAST:event_mi_connectActionPerformed
+
+    private void mi_disconnectActionPerformed(java.awt.event.ActionEvent evt) {
+        cc.stop();
+    }
 
     private void btn_connectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_connectActionPerformed
         // TODO add your handling code here:
