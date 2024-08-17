@@ -7,7 +7,7 @@ Compiling JavaChatProgram needs netbeans 10.0 or above so that you do not have t
 
 Compile the Java Chat Server Program
 The project files at "ui/*/nbproject" can be opened with netbeans 10 and be compiled.
-or
+or use the command line
 <pre>
   cd ui/JavaChatServerProgramUI/src
   javac JavaChatServerProgramUI/*.java
