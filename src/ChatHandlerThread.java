@@ -1,3 +1,5 @@
+package javachatserverprogramui;
+
 import java.io.*;
 
 class ChatHandlerThread implements Runnable{
@@ -15,19 +17,7 @@ class ChatHandlerThread implements Runnable{
 	}
 
 	public void run(){
-		while(true){
-			try{
-				String line = streamIn.readUTF();
-				
-				server.handle(ID, line);
-			} catch (IOException ioe){
-				//try{close();} catch(IOException e){System.out.println(e.getMessage());}
-				//stop();
-
-				server.remove(ID);
-	            break;
-			}
-		}
+		
 	}
 
 	public void startCHT()

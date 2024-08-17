@@ -1,3 +1,5 @@
+package javachatserverprogramui;
+
 import java.io.*;
 
 class ChatServerMsg implements Runnable{
@@ -18,7 +20,6 @@ class ChatServerMsg implements Runnable{
 		boolean bool = true;
 		while(bool){
 			try{
-				System.out.println("()()()");
 				String line = streamIn.readLine();
 				if(line.equals(".bye")){
 				System.out.println("bye");
