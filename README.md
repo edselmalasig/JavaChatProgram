@@ -33,7 +33,7 @@ There is a commandline interface as well
   cd src/
   javac *.java
 </pre>
-then run the Chat Server or Chat Client on a different process.
+then run the Chat Server and Chat Client on a different process.
 <pre>
   java ChatServer 404
 </pre>
