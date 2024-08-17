@@ -144,6 +144,25 @@ public class ChatServer implements Runnable
       zz
    }
    */
+
+  public void disconnect()
+  {
+
+      try {
+         for(int i = 0; i < clientCount; i++){
+            clients[i].close();
+         }
+      } catch (IOException e) {
+         e.printStackTrace();  // Handle the exception appropriately
+      }
+      try {
+         server.close();
+      } catch(IOException e) {
+         e.printStackTrace();
+      }
+      
+      System.out.println("Server socket Disconnected.");
+  }
    
    public ChatServerThread[] get_cht(){
        return clients;

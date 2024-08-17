@@ -66,7 +66,8 @@ public class JSUI extends javax.swing.JFrame {
         sp_client = new javax.swing.JScrollPane();
         list_client = new javax.swing.JList<>();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextPane1 = new javax.swing.JTextPane();
+        
+        jlabel_c = new javax.swing.JLabel();
         jMenuBar = new javax.swing.JMenuBar();
         menu_main = new javax.swing.JMenu();
         mi_connect = new javax.swing.JMenuItem();
@@ -242,10 +243,10 @@ public class JSUI extends javax.swing.JFrame {
         list_client.setEnabled(false);
         sp_client.setViewportView(list_client);
 
-        jTextPane1.setText("Clients");
-        jScrollPane1.setViewportView(jTextPane1);
+        jlabel_c.setText("Clients");
+        jScrollPane1.setViewportView(jlabel_c);
 
-        menu_main.setText("Server");
+        menu_main.setText("Setup");
         menu_main.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 menu_mainMouseClicked(evt);
@@ -384,12 +385,7 @@ public class JSUI extends javax.swing.JFrame {
             message = tf_msg.getText();
              if( evt.getKeyCode() == java.awt.event.KeyEvent.VK_ENTER )
              {
-
-             
-                 
                  cs.handle("Server: ", message);
-                 
-                 
              tf_msg.setText("");
              }
                      
@@ -491,6 +487,7 @@ public class JSUI extends javax.swing.JFrame {
 
     private void mi_disconnectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mi_disconnectActionPerformed
         // TODO add your handling code here:
+        cs.disconnect();
     }//GEN-LAST:event_mi_disconnectActionPerformed
 
     private void btn_cancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cancelActionPerformed
@@ -560,7 +557,7 @@ public class JSUI extends javax.swing.JFrame {
     private javax.swing.JFrame f_connect;
     private javax.swing.JMenuBar jMenuBar;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextPane jTextPane1;
+    private javax.swing.JLabel jlabel_c;
     private javax.swing.JLabel lbl_message;
     private javax.swing.JLabel lbld_port;
     private javax.swing.JLabel lbld_server;
