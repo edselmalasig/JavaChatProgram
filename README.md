@@ -38,7 +38,7 @@ then run the Chat Server or Chat Client on a different process.
   java ChatServer 404
 </pre>
 <pre>
-  javac ChatClient 127.0.0.1 404 username
+  java ChatClient 127.0.0.1 404 username
 </pre>
 and start chatting with the server.
 
