@@ -8,19 +8,23 @@ Compiling JavaChatProgram needs netbeans 10.0 or above so that you do not have t
 Compile the Java Chat Server Program
 The project files at "ui/*/nbproject" can be opened with netbeans 10 and be compiled.
 or
+<pre>
   cd ui/JavaChatServerProgramUI/src
   javac JavaChatServerProgramUI/*.java
   java javachatserverprogramui.JavaChatServerProgramUI
+</pre>
 
 Setup JavaChatServerProgramUI by setting the ports.
 You might need to sudo to bind ports in macOS or Linux: sudo java javachatserverprogramui.JavaChatServerProgramUI
 Best way to test is to run the server program through a local network by using "localhost" or "127.0.0.1" with any chosen port for example "404".
 
 Note: There is a client and server code. The server program needs to be run through a local network or through the internet given that there are appropriate network permission given to the client and server program.
+<pre>
   cd ui/JavaChatProgramUI/src
   javac javachatprogramui/*.java
   java javachatprogramui.JavaChatProgramUI
-  
+</pre>
+
 Once the server program us up and running. Run a client program to connect to the server program by using the specified parameters used above and choosing any desired user name.
 Once connected you can test the program's feature.
 
